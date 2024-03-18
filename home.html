@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>AHI Prediction</title>
+    </head>
+    <body>
+        <h1>AHI Prediction</h1>
+        <form method="POST" action="/predict">
+            <label for="time_under90">Time Under 90 (Min):</label>
+            <input type="number" step="any" id="time_under90" name="time_under90" required><br>
+    
+            <label for="snoring_size">Snoring Size:</label>
+            <input type="number" step="any" id="snoring_size" name="snoring_size" required><br>
+    
+            <label for="spo2_avg">SpO2 AVG:</label>
+            <input type="number" step="any" id="spo2_avg" name="spo2_avg" required><br>
+    
+            <label for="spo2_min">SpO2 MIN:</label>
+            <input type="number" step="any" id="spo2_min" name="spo2_min" required><br>
+    
+            <label for="bmi">BMI:</label>
+            <input type="number" step="any" id="bmi" name="bmi" required><br>
+    
+            <input type="submit" value="Predict">
+        </form>
+    
+        {% if prediction_text %}
+            <h2>{{ prediction_text }}</h2>
+        {% endif %}
+    </body>
+</html>
